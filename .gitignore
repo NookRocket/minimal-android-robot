@@ -1,0 +1,22 @@
+# Robot Framework specific files
+log.html
+output.xml
+report.html
+results/
+atest/results
+utest/jasmine-results
+
+# Environment and build artifacts
+tmp/
+build/
+dist/
+target/
+venv*
+.venv*
+.env
+
+# Python specific files
+*.pyc
+__pycache__
+*$py.class
+*.egg-info
