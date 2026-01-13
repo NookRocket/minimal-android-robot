@@ -1,3 +1,4 @@
 label:
   title: Title
   reminderSetFor: Reminder set for
+  enteredInPast: The date you entered is in the past

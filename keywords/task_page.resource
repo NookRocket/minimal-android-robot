@@ -8,12 +8,17 @@ Variables       ../resources/data/common.yaml
 
 *** Keywords ***
 Verify New Task Page Visible
-    [Documentation]
+    [Documentation]    Verifies that the New Task page is displayed correctly.
+    ...    Checks the page title, task name input field, and Apply button visibility.
     Wait Until Page Contains         ${label['title']}
     Wait Until Element Is Visible    ${task_page.inp_task_name}
     Wait Until Element Is Visible    ${task_page.btn_apply}
 
 Scroll To Select Year
+    [Documentation]    Scrolls through the calendar year list and selects the specified year.
+    ...
+    ...    Arguments:
+    ...    - year: Year value to be selected in the calendar.
     [Arguments]    ${year}
     ${year_loc}    common.Build Locator    ${task_page.lbl_calendar_year}    {{year}}    ${year}
 
@@ -28,21 +33,33 @@ Scroll To Select Year
     END
 
 Scroll To Select Date
+    [Documentation]    Scrolls through the calendar date list and selects the specified date.
+    ...
+    ...    Arguments:
+    ...    - date: Date value to be selected in the calendar.
     [Arguments]    ${date}
     ${date_loc}    common.Build Locator    ${task_page.lbl_calendar_date}    {{date}}    ${date}
     Wait Until Element Is Visible    ${task_page.frm_list}
     FOR    ${i}    IN RANGE    20
-        common.Swipe Down To Top     ${task_page.frm_list}
         ${date_visible}    common.Is Element Visible    ${date_loc}
         IF    ${date_visible}
             Click Element    ${date_loc}
             Click Element    ${task_page.btn_apply_remind_date}
             BREAK
         END
+        common.Swipe Down To Top     ${task_page.frm_list}
     END
 
 
 Fill Task Form
+    [Documentation]    Fills in the task form with the provided task name. Optionally sets reminder date and time.
+    ...    Submits the task if apply flag is set to True.
+    ...
+    ...    Arguments:
+    ...    - taskname: Name of the task to be created.
+    ...    - remind_date (optional): Reminder date for the task.
+    ...    - remind_time (optional): Reminder time for the task.
+    ...    - apply (optional): Whether to submit the task form.
     [Arguments]    ${taskname}    ${remind_date}=${EMPTY}    ${remind_time}=${EMPTY}    ${apply}=${False}
     Wait Until Element Is Visible     ${task_page.inp_task_name}
     Clear Text    ${task_page.inp_task_name}
@@ -64,7 +81,9 @@ Fill Task Form
     END
 
 Verify Remind Information Result
+    [Documentation]    Verifies that reminder information is displayed after setting a reminder.
     Wait Until Page Contains    ${label['reminderSetFor']}
 
 Apply Task
+    [Documentation]    Submits the task by clicking the Apply button.
     Click Element    ${task_page.btn_apply}

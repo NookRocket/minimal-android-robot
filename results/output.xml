@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.9.2 on win32)" generated="2026-01-13T13:36:53.449076" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="n:\ttb-test\Automation Test\4_test_mobile\minimal-robot\tests">
+<suite id="s1-s1" name="Home" source="n:\ttb-test\Automation Test\4_test_mobile\minimal-robot\tests\home.robot">
+<test id="s1-s1-t1" name="User able to click add task button" line="8">
+<kw name="Open Android Application" owner="setup" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${APPIUM_SERVER_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>app=${ANDROID_APP_PATH}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>newCommandTimeout=300000</arg>
+<arg>launchTimeout=3000000</arg>
+<arg>noReset=${False}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2026-01-13T13:36:54.529541" elapsed="8.918936"/>
+</kw>
+<doc>Opens the Android application using Appium with predefined configuration.</doc>
+<status status="PASS" start="2026-01-13T13:36:54.525320" elapsed="8.925561"/>
+</kw>
+<kw name="Verify Add Task Button Visible" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:04.544683" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]</msg>
+<arg>${home_page.btn_add_task}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:03.467654" elapsed="1.083712"/>
+</kw>
+<doc>Verifies that the Add Task button is visible on the home page.</doc>
+<status status="PASS" start="2026-01-13T13:37:03.465662" elapsed="1.086206"/>
+</kw>
+<kw name="Click Add Task" owner="home_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:04.558370" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]'.</msg>
+<msg time="2026-01-13T13:37:04.735274" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]</msg>
+<arg>${home_page.btn_add_task}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:04.555891" elapsed="0.179883"/>
+</kw>
+<doc>Clicks the Add Task button on the home page.</doc>
+<status status="PASS" start="2026-01-13T13:37:04.554890" elapsed="0.180884"/>
+</kw>
+<kw name="Verify New Task Page Visible" owner="task_page">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${label['title']}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:04.757606" elapsed="1.668611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:06.557664" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:06.427220" elapsed="0.134459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:06.672378" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:06.562180" elapsed="0.110198"/>
+</kw>
+<doc>Verifies that the New Task page is displayed correctly.
+Checks the page title, task name input field, and Apply button visibility.</doc>
+<status status="PASS" start="2026-01-13T13:37:04.756606" elapsed="1.915772"/>
+</kw>
+<kw name="Close Application" owner="setup" type="TEARDOWN">
+<kw name="Remove Application" owner="AppiumLibrary">
+<arg>${APP_PACKAGE}</arg>
+<doc>Removes the application that is identified with an application id</doc>
+<status status="PASS" start="2026-01-13T13:37:06.679737" elapsed="0.822270"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2026-01-13T13:37:07.502506" elapsed="0.668565"/>
+</kw>
+<doc>Closes the Android application and removes it from the device.</doc>
+<status status="PASS" start="2026-01-13T13:37:06.678736" elapsed="1.492836"/>
+</kw>
+<doc>Verifies that the user can access the New Task page by clicking the Add Task button.</doc>
+<status status="PASS" start="2026-01-13T13:36:54.521536" elapsed="13.650534"/>
+</test>
+<status status="PASS" start="2026-01-13T13:36:53.502950" elapsed="14.671505"/>
+</suite>
+<suite id="s1-s2" name="Task" source="n:\ttb-test\Automation Test\4_test_mobile\minimal-robot\tests\task.robot">
+<test id="s1-s2-t1" name="Verify add new task" line="8">
+<kw name="Open Android Application" owner="setup" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${APPIUM_SERVER_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>app=${ANDROID_APP_PATH}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>newCommandTimeout=300000</arg>
+<arg>launchTimeout=3000000</arg>
+<arg>noReset=${False}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2026-01-13T13:37:08.321109" elapsed="7.838211"/>
+</kw>
+<doc>Opens the Android application using Appium with predefined configuration.</doc>
+<status status="PASS" start="2026-01-13T13:37:08.320106" elapsed="7.839690"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-13T13:37:16.161559" level="INFO">${taskname} = task_1</msg>
+<var>${taskname}</var>
+<arg>task_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.160858" elapsed="0.014042"/>
+</kw>
+<kw name="Get Date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-01-13T13:37:16.190101" level="INFO">${current_date} = 2026-01-13 13:37:16.189</msg>
+<var>${current_date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.188960" elapsed="0.006081"/>
+</kw>
+<kw name="Add Time To Date" owner="DateTime">
+<msg time="2026-01-13T13:37:16.206018" level="INFO">${date} = 2026-01-14 13:37:16.189</msg>
+<var>${date}</var>
+<arg>${current_date}</arg>
+<arg>${offset_day} day</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.195540" elapsed="0.010981"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-01-13T13:37:16.208603" level="INFO">${date} = 14 January 2026</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<arg>result_format=${format}</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.207436" elapsed="0.001668"/>
+</kw>
+<return>
+<value>${date}</value>
+<status status="PASS" start="2026-01-13T13:37:16.209606" elapsed="0.000540"/>
+</return>
+<msg time="2026-01-13T13:37:16.210603" level="INFO">${remind_date} = 14 January 2026</msg>
+<var>${remind_date}</var>
+<arg>offset_day=${1}</arg>
+<doc>Returns a formatted date string based on the current date and day offset.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.186788" elapsed="0.024315"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-13T13:37:16.212603" level="INFO">14 January 2026</msg>
+<arg>${remind_date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.212107" elapsed="0.000496"/>
+</kw>
+<kw name="Click Add Task" owner="home_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:16.218258" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]'.</msg>
+<msg time="2026-01-13T13:37:17.053613" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]</msg>
+<arg>${home_page.btn_add_task}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.215258" elapsed="0.838855"/>
+</kw>
+<doc>Clicks the Add Task button on the home page.</doc>
+<status status="PASS" start="2026-01-13T13:37:16.214170" elapsed="0.839943"/>
+</kw>
+<kw name="Verify New Task Page Visible" owner="task_page">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${label['title']}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:17.061823" elapsed="1.611183"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:18.811190" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:18.674541" elapsed="0.137154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:18.916117" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:18.811695" elapsed="0.105437"/>
+</kw>
+<doc>Verifies that the New Task page is displayed correctly.
+Checks the page title, task name input field, and Apply button visibility.</doc>
+<status status="PASS" start="2026-01-13T13:37:17.060949" elapsed="1.856183"/>
+</kw>
+<kw name="Fill Task Form" owner="task_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:19.009506" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:18.920750" elapsed="0.088756"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:19.013140" level="INFO">Clear text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:19.109847" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:19.010038" elapsed="0.100309"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:19.112862" level="INFO">Typing text 'task_1' into text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:19.870994" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<arg>${taskname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:19.110848" elapsed="0.761144"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_date}'">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:19.876645" level="INFO">Clicking element 'xpath=//android.widget.Switch[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat"]'.</msg>
+<msg time="2026-01-13T13:37:21.353448" level="INFO">xpath criteria: //android.widget.Switch[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat"]</msg>
+<arg>${task_page.btn_switch_remind}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:19.872993" elapsed="1.481454"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:21.358167" level="INFO">Clicking element 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText"]'.</msg>
+<msg time="2026-01-13T13:37:21.556803" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText"]</msg>
+<arg>${task_page.btn_set_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.354948" elapsed="0.202361"/>
+</kw>
+<kw name="Scroll To Select Date" owner="task_page">
+<kw name="Build Locator" owner="common">
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-01-13T13:37:21.560891" level="INFO">${replace_with} = 14 January 2026</msg>
+<var>${replace_with}</var>
+<arg>${replace_with}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.560390" elapsed="0.001002"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-13T13:37:21.561392" level="INFO">${new_loc} = xpath=//android.view.View[contains(@content-desc,"14 January 2026")]</msg>
+<var>${new_loc}</var>
+<arg>${locator}</arg>
+<arg>${search_for}</arg>
+<arg>${replace_with}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.561392" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${new_loc}</value>
+<status status="PASS" start="2026-01-13T13:37:21.562404" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:21.562404" level="INFO">${date_loc} = xpath=//android.view.View[contains(@content-desc,"14 January 2026")]</msg>
+<var>${date_loc}</var>
+<arg>${task_page.lbl_calendar_date}</arg>
+<arg>{{date}}</arg>
+<arg>${date}</arg>
+<doc>Replaces a substring in a given locator with a new value (e.g., placeholders).
+Arguments:
+- locator: Original locator string.
+- search_for: Substring or placeholder to be replaced.
+- replace_with: Value used to replace the placeholder.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.559231" elapsed="0.003173"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:23.245942" level="INFO">xpath criteria: //android.widget.ListView</msg>
+<arg>${task_page.frm_list}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.562404" elapsed="1.683999"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Is Element Visible" owner="common">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:23.563814" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"14 January 2026")]</msg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:23.248974" elapsed="0.314840"/>
+</kw>
+<msg time="2026-01-13T13:37:23.564813" level="INFO">${element_vis} = True</msg>
+<var>${element_vis}</var>
+<arg>AppiumLibrary.Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-01-13T13:37:23.248402" elapsed="0.316411"/>
+</kw>
+<return>
+<value>${element_vis}</value>
+<status status="PASS" start="2026-01-13T13:37:23.564813" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:23.565813" level="INFO">${date_visible} = True</msg>
+<var>${date_visible}</var>
+<arg>${date_loc}</arg>
+<doc>Checks whether an element becomes visible within the specified timeout.</doc>
+<status status="PASS" start="2026-01-13T13:37:23.247403" elapsed="0.318790"/>
+</kw>
+<if>
+<branch type="IF" condition="${date_visible}">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:23.568494" level="INFO">Clicking element 'xpath=//android.view.View[contains(@content-desc,"14 January 2026")]'.</msg>
+<msg time="2026-01-13T13:37:24.344320" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"14 January 2026")]</msg>
+<arg>${date_loc}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:23.566481" elapsed="0.779056"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:24.348178" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="com.avjindersinghsekhon.minimaltodo:id/ok"]'.</msg>
+<msg time="2026-01-13T13:37:25.110328" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.avjindersinghsekhon.minimaltodo:id/ok"]</msg>
+<arg>${task_page.btn_apply_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:24.345537" elapsed="0.764791"/>
+</kw>
+<break>
+<status status="PASS" start="2026-01-13T13:37:25.110328" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2026-01-13T13:37:23.566481" elapsed="1.543847"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:23.566481" elapsed="1.544912"/>
+</if>
+<kw name="Swipe Down To Top" owner="common">
+<arg>${task_page.frm_list}</arg>
+<doc>Performs a swipe gesture from the lower part of the element to the upper part.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:25.111393" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-01-13T13:37:23.246964" elapsed="1.864429"/>
+</iter>
+<var>${i}</var>
+<value>20</value>
+<status status="PASS" start="2026-01-13T13:37:23.246403" elapsed="1.866011"/>
+</for>
+<arg>${remind_date}</arg>
+<doc>Scrolls through the calendar date list and selects the specified date.</doc>
+<status status="PASS" start="2026-01-13T13:37:21.557797" elapsed="3.554617"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_time}'">
+<kw name="Clear Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:25.112414" elapsed="0.000989"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<arg>${remind_time}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:25.113403" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:25.112414" elapsed="0.000989"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:25.112414" elapsed="0.000989"/>
+</if>
+<status status="PASS" start="2026-01-13T13:37:19.872492" elapsed="5.240911"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:19.871992" elapsed="5.241411"/>
+</if>
+<if>
+<branch type="IF" condition="${apply}">
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:25.114378" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:25.114378" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:25.113403" elapsed="0.000975"/>
+</if>
+<arg>${taskname}</arg>
+<arg>remind_date=${remind_date}</arg>
+<doc>Fills in the task form with the provided task name. Optionally sets reminder date and time.
+Submits the task if apply flag is set to True.</doc>
+<status status="PASS" start="2026-01-13T13:37:18.918471" elapsed="6.195907"/>
+</kw>
+<kw name="Verify Remind Information Result" owner="task_page">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${label['reminderSetFor']}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.116388" elapsed="0.042780"/>
+</kw>
+<doc>Verifies that reminder information is displayed after setting a reminder.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.115385" elapsed="0.044271"/>
+</kw>
+<kw name="Apply Task" owner="task_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:25.162176" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]'.</msg>
+<msg time="2026-01-13T13:37:25.288577" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.160155" elapsed="0.128422"/>
+</kw>
+<doc>Submits the task by clicking the Apply button.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.160155" elapsed="0.128422"/>
+</kw>
+<kw name="Verify Task Name Visible" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:37:25.292763" level="INFO">${first_letter} = T</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.292263" elapsed="0.000500"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:37:25.295159" level="INFO">${taskname} = Task_1</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.294160" elapsed="0.001690"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:37:25.296877" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:25.297204" level="INFO">${expected_taskname} = Task_1</msg>
+<var>${expected_taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.291763" elapsed="0.005942"/>
+</kw>
+<if>
+<branch type="IF" condition="${visible}">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.298206" elapsed="1.343618"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:25.297705" elapsed="1.344119"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:26.641824" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:26.641824" elapsed="0.001088"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:25.297705" elapsed="1.345207"/>
+</if>
+<arg>${taskname}</arg>
+<doc>Verifies whether a task name is visible or not visible on the page.</doc>
+<status status="PASS" start="2026-01-13T13:37:25.290264" elapsed="1.352648"/>
+</kw>
+<kw name="Close Application" owner="setup" type="TEARDOWN">
+<kw name="Remove Application" owner="AppiumLibrary">
+<arg>${APP_PACKAGE}</arg>
+<doc>Removes the application that is identified with an application id</doc>
+<status status="PASS" start="2026-01-13T13:37:26.644841" elapsed="0.572281"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2026-01-13T13:37:27.217621" elapsed="0.525348"/>
+</kw>
+<doc>Closes the Android application and removes it from the device.</doc>
+<status status="PASS" start="2026-01-13T13:37:26.643840" elapsed="1.099129"/>
+</kw>
+<doc>Verifies that a user can add a new task with a reminder date successfully.</doc>
+<status status="PASS" start="2026-01-13T13:37:08.318085" elapsed="19.425931"/>
+</test>
+<test id="s1-s2-t2" name="Verify user able to edit task" line="20">
+<kw name="Open Android Application" owner="setup" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${APPIUM_SERVER_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>app=${ANDROID_APP_PATH}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>newCommandTimeout=300000</arg>
+<arg>launchTimeout=3000000</arg>
+<arg>noReset=${False}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2026-01-13T13:37:27.749190" elapsed="7.689818"/>
+</kw>
+<doc>Opens the Android application using Appium with predefined configuration.</doc>
+<status status="PASS" start="2026-01-13T13:37:27.747692" elapsed="7.693225"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-13T13:37:35.444433" level="INFO">${first_name} = first_name</msg>
+<var>${first_name}</var>
+<arg>first_name</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-13T13:37:35.443934" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-13T13:37:35.449215" level="INFO">${second_name} = second_name</msg>
+<var>${second_name}</var>
+<arg>second_name</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-13T13:37:35.448717" elapsed="0.001009"/>
+</kw>
+<kw name="Click Add Task" owner="home_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:35.454297" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]'.</msg>
+<msg time="2026-01-13T13:37:36.420697" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]</msg>
+<arg>${home_page.btn_add_task}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:35.451911" elapsed="0.969286"/>
+</kw>
+<doc>Clicks the Add Task button on the home page.</doc>
+<status status="PASS" start="2026-01-13T13:37:35.451055" elapsed="0.970403"/>
+</kw>
+<kw name="Fill Task Form" owner="task_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:38.143891" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]
+xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:36.429485" elapsed="1.714406"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:38.147915" level="INFO">Clear text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:38.250666" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:38.144900" elapsed="0.105766"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:38.253353" level="INFO">Typing text 'first_name' into text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:39.015982" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<arg>${taskname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:38.251166" elapsed="0.765465"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_date}'">
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_switch_remind}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:39.017634" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:39.018134" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll To Select Date" owner="task_page">
+<arg>${remind_date}</arg>
+<doc>Scrolls through the calendar date list and selects the specified date.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:39.018134" elapsed="0.001009"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_time}'">
+<kw name="Clear Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:39.019516" elapsed="0.001208"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<arg>${remind_time}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:39.021224" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:39.019516" elapsed="0.002209"/>
+</branch>
+<status status="NOT RUN" start="2026-01-13T13:37:39.019516" elapsed="0.002533"/>
+</if>
+<status status="NOT RUN" start="2026-01-13T13:37:39.017132" elapsed="0.005038"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:39.016631" elapsed="0.005539"/>
+</if>
+<if>
+<branch type="IF" condition="${apply}">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:39.026250" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]'.</msg>
+<msg time="2026-01-13T13:37:39.806205" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.023221" elapsed="0.783483"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:39.022672" elapsed="0.784531"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:39.022672" elapsed="0.784531"/>
+</if>
+<arg>${first_name}</arg>
+<arg>apply=${True}</arg>
+<doc>Fills in the task form with the provided task name. Optionally sets reminder date and time.
+Submits the task if apply flag is set to True.</doc>
+<status status="PASS" start="2026-01-13T13:37:36.425598" elapsed="3.381605"/>
+</kw>
+<kw name="Verify Task Name Visible" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:37:39.811313" level="INFO">${first_letter} = F</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.809813" elapsed="0.002004"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:37:39.813370" level="INFO">${taskname} = First_name</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.811817" elapsed="0.001553"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:37:39.813870" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:39.813870" level="INFO">${expected_taskname} = First_name</msg>
+<var>${expected_taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.809123" elapsed="0.004747"/>
+</kw>
+<if>
+<branch type="IF" condition="${visible}">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.814883" elapsed="1.533588"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:39.813870" elapsed="1.535101"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:41.349494" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:41.348971" elapsed="0.001002"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:39.813870" elapsed="1.536103"/>
+</if>
+<arg>${first_name}</arg>
+<doc>Verifies whether a task name is visible or not visible on the page.</doc>
+<status status="PASS" start="2026-01-13T13:37:39.808125" elapsed="1.541848"/>
+</kw>
+<kw name="Click Task Name" owner="home_page">
+<kw name="Retrieve Task Item" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:37:41.354866" level="INFO">${first_letter} = F</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.352739" elapsed="0.002127"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:37:41.355865" level="INFO">${taskname} = First_name</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.354866" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:37:41.356865" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:41.356865" level="INFO">${taskname} = First_name</msg>
+<var>${taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.352739" elapsed="0.004126"/>
+</kw>
+<kw name="Build Locator" owner="common">
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-01-13T13:37:41.357864" level="INFO">${replace_with} = First_name</msg>
+<var>${replace_with}</var>
+<arg>${replace_with}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.357864" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-13T13:37:41.359384" level="INFO">${new_loc} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text="First_name"]</msg>
+<var>${new_loc}</var>
+<arg>${locator}</arg>
+<arg>${search_for}</arg>
+<arg>${replace_with}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.358864" elapsed="0.000520"/>
+</kw>
+<return>
+<value>${new_loc}</value>
+<status status="PASS" start="2026-01-13T13:37:41.359384" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:41.359384" level="INFO">${task_loc} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text="First_name"]</msg>
+<var>${task_loc}</var>
+<arg>${home_page.lbl_task_by_name}</arg>
+<arg>{{taskname}}</arg>
+<arg>${taskname}</arg>
+<doc>Replaces a substring in a given locator with a new value (e.g., placeholders).
+Arguments:
+- locator: Original locator string.
+- search_for: Substring or placeholder to be replaced.
+- replace_with: Value used to replace the placeholder.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.356865" elapsed="0.002519"/>
+</kw>
+<return>
+<value>${task_loc}</value>
+<status status="PASS" start="2026-01-13T13:37:41.360372" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:41.360372" level="INFO">${task_loc} = xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text="First_name"]</msg>
+<var>${task_loc}</var>
+<arg>${taskname}</arg>
+<doc>Retrieves the locator of a task item by task name.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.351869" elapsed="0.008503"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:41.362372" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text="First_name"]'.</msg>
+<msg time="2026-01-13T13:37:41.537323" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview" and @text="First_name"]</msg>
+<arg>${task_loc}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.361372" elapsed="0.176951"/>
+</kw>
+<arg>${first_name}</arg>
+<doc>Clicks a task item by task name.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.350971" elapsed="0.187640"/>
+</kw>
+<kw name="Fill Task Form" owner="task_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:42.888805" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]
+xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.542942" elapsed="1.346363"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:42.891833" level="INFO">Clear text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:42.980994" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:42.889804" elapsed="0.091190"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:42.984900" level="INFO">Typing text 'second_name' into text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:37:43.804996" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<arg>${taskname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:42.982007" elapsed="0.823487"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_date}'">
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_switch_remind}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:43.807357" elapsed="0.000502"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:43.808360" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll To Select Date" owner="task_page">
+<arg>${remind_date}</arg>
+<doc>Scrolls through the calendar date list and selects the specified date.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:43.809359" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_time}'">
+<kw name="Clear Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:43.810360" elapsed="0.000107"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<arg>${remind_time}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:43.810971" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:43.809861" elapsed="0.001573"/>
+</branch>
+<status status="NOT RUN" start="2026-01-13T13:37:43.809861" elapsed="0.001573"/>
+</if>
+<status status="NOT RUN" start="2026-01-13T13:37:43.806360" elapsed="0.005074"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:43.806360" elapsed="0.005074"/>
+</if>
+<if>
+<branch type="IF" condition="${apply}">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:43.815952" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]'.</msg>
+<msg time="2026-01-13T13:37:44.663816" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:43.811434" elapsed="0.853844"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:43.811434" elapsed="0.854341"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:43.811434" elapsed="0.854841"/>
+</if>
+<arg>${second_name}</arg>
+<arg>apply=${True}</arg>
+<doc>Fills in the task form with the provided task name. Optionally sets reminder date and time.
+Submits the task if apply flag is set to True.</doc>
+<status status="PASS" start="2026-01-13T13:37:41.540621" elapsed="3.125654"/>
+</kw>
+<kw name="Verify Task Name Visible" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:37:44.671610" level="INFO">${first_letter} = F</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:37:44.670037" elapsed="0.001573"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:37:44.674216" level="INFO">${taskname} = First_name</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:37:44.672197" elapsed="0.002019"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:37:44.674216" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:37:44.675269" level="INFO">${expected_taskname} = First_name</msg>
+<var>${expected_taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:37:44.669295" elapsed="0.005974"/>
+</kw>
+<if>
+<branch type="IF" condition="${visible}">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:44.676231" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:44.675269" elapsed="0.000962"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:44.676231" elapsed="1.424456"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:44.676231" elapsed="1.424456"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:44.675269" elapsed="1.425418"/>
+</if>
+<arg>${first_name}</arg>
+<arg>visible=${False}</arg>
+<doc>Verifies whether a task name is visible or not visible on the page.</doc>
+<status status="PASS" start="2026-01-13T13:37:44.667773" elapsed="1.432914"/>
+</kw>
+<kw name="Verify Task Name Visible" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:37:46.104205" level="INFO">${first_letter} = S</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.103205" elapsed="0.001000"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:37:46.105205" level="INFO">${taskname} = Second_name</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.104205" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:37:46.105205" elapsed="0.000999"/>
+</return>
+<msg time="2026-01-13T13:37:46.106204" level="INFO">${expected_taskname} = Second_name</msg>
+<var>${expected_taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.102204" elapsed="0.004000"/>
+</kw>
+<if>
+<branch type="IF" condition="${visible}">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.107217" elapsed="0.036519"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:37:46.106204" elapsed="0.037532"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="NOT RUN" start="2026-01-13T13:37:46.143736" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:37:46.143736" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:37:46.106204" elapsed="0.038621"/>
+</if>
+<arg>${second_name}</arg>
+<doc>Verifies whether a task name is visible or not visible on the page.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.101190" elapsed="0.043698"/>
+</kw>
+<kw name="Close Application" owner="setup" type="TEARDOWN">
+<kw name="Remove Application" owner="AppiumLibrary">
+<arg>${APP_PACKAGE}</arg>
+<doc>Removes the application that is identified with an application id</doc>
+<status status="PASS" start="2026-01-13T13:37:46.146442" elapsed="3.636340"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2026-01-13T13:37:49.783650" elapsed="0.421409"/>
+</kw>
+<doc>Closes the Android application and removes it from the device.</doc>
+<status status="PASS" start="2026-01-13T13:37:46.145861" elapsed="4.059198"/>
+</kw>
+<doc>Verifies that a user can edit an existing task name successfully.</doc>
+<status status="PASS" start="2026-01-13T13:37:27.746368" elapsed="22.460330"/>
+</test>
+<test id="s1-s2-t3" name="Verify user not able to set past time" line="32">
+<kw name="Open Android Application" owner="setup" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${APPIUM_SERVER_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>app=${ANDROID_APP_PATH}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>newCommandTimeout=300000</arg>
+<arg>launchTimeout=3000000</arg>
+<arg>noReset=${False}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2026-01-13T13:37:50.211426" elapsed="8.506536"/>
+</kw>
+<doc>Opens the Android application using Appium with predefined configuration.</doc>
+<status status="PASS" start="2026-01-13T13:37:50.210158" elapsed="8.508303"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-13T13:37:58.727752" level="INFO">${taskname} = task_1</msg>
+<var>${taskname}</var>
+<arg>task_1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.726753" elapsed="0.000999"/>
+</kw>
+<kw name="Get Date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-01-13T13:37:58.731055" level="INFO">${current_date} = 2026-01-13 13:37:58.731</msg>
+<var>${current_date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.730754" elapsed="0.001302"/>
+</kw>
+<kw name="Add Time To Date" owner="DateTime">
+<msg time="2026-01-13T13:37:58.733556" level="INFO">${date} = 2026-01-13 13:37:58.731</msg>
+<var>${date}</var>
+<arg>${current_date}</arg>
+<arg>${offset_day} day</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.732557" elapsed="0.000999"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-01-13T13:37:58.734557" level="INFO">${date} = 13 January 2026</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<arg>result_format=${format}</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.734056" elapsed="0.001027"/>
+</kw>
+<return>
+<value>${date}</value>
+<status status="PASS" start="2026-01-13T13:37:58.735083" elapsed="0.001001"/>
+</return>
+<msg time="2026-01-13T13:37:58.736585" level="INFO">${date} = 13 January 2026</msg>
+<var>${date}</var>
+<doc>Returns a formatted date string based on the current date and day offset.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.728794" elapsed="0.008291"/>
+</kw>
+<kw name="Click Add Task" owner="home_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:37:58.747543" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]'.</msg>
+<msg time="2026-01-13T13:38:00.425906" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB"]</msg>
+<arg>${home_page.btn_add_task}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.744032" elapsed="1.682376"/>
+</kw>
+<doc>Clicks the Add Task button on the home page.</doc>
+<status status="PASS" start="2026-01-13T13:37:58.742329" elapsed="1.684079"/>
+</kw>
+<kw name="Verify New Task Page Visible" owner="task_page">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${label['title']}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:38:00.428857" elapsed="1.619002"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:02.369394" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.048359" elapsed="0.321436"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:02.455662" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.369795" elapsed="0.086367"/>
+</kw>
+<doc>Verifies that the New Task page is displayed correctly.
+Checks the page title, task name input field, and Apply button visibility.</doc>
+<status status="PASS" start="2026-01-13T13:38:00.428356" elapsed="2.027806"/>
+</kw>
+<kw name="Fill Task Form" owner="task_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:02.690612" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.459330" elapsed="0.231282"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:02.693824" level="INFO">Clear text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:38:02.779567" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.690612" elapsed="0.089960"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:02.783653" level="INFO">Typing text 'task_1' into text field 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]'</msg>
+<msg time="2026-01-13T13:38:03.544243" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/userToDoEditText"]</msg>
+<arg>${task_page.inp_task_name}</arg>
+<arg>${taskname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.780572" elapsed="0.764177"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_date}'">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:03.548743" level="INFO">Clicking element 'xpath=//android.widget.Switch[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat"]'.</msg>
+<msg time="2026-01-13T13:38:05.053163" level="INFO">xpath criteria: //android.widget.Switch[@resource-id="com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat"]</msg>
+<arg>${task_page.btn_switch_remind}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:03.545746" elapsed="1.507918"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:05.056714" level="INFO">Clicking element 'xpath=//android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText"]'.</msg>
+<msg time="2026-01-13T13:38:05.239367" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText"]</msg>
+<arg>${task_page.btn_set_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.054407" elapsed="0.185461"/>
+</kw>
+<kw name="Scroll To Select Date" owner="task_page">
+<kw name="Build Locator" owner="common">
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-01-13T13:38:05.242868" level="INFO">${replace_with} = 13 January 2026</msg>
+<var>${replace_with}</var>
+<arg>${replace_with}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.242368" elapsed="0.000500"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-13T13:38:05.243891" level="INFO">${new_loc} = xpath=//android.view.View[contains(@content-desc,"13 January 2026")]</msg>
+<var>${new_loc}</var>
+<arg>${locator}</arg>
+<arg>${search_for}</arg>
+<arg>${replace_with}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.243891" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${new_loc}</value>
+<status status="PASS" start="2026-01-13T13:38:05.244891" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:38:05.244891" level="INFO">${date_loc} = xpath=//android.view.View[contains(@content-desc,"13 January 2026")]</msg>
+<var>${date_loc}</var>
+<arg>${task_page.lbl_calendar_date}</arg>
+<arg>{{date}}</arg>
+<arg>${date}</arg>
+<doc>Replaces a substring in a given locator with a new value (e.g., placeholders).
+Arguments:
+- locator: Original locator string.
+- search_for: Substring or placeholder to be replaced.
+- replace_with: Value used to replace the placeholder.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.241367" elapsed="0.003524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:06.979704" level="INFO">xpath criteria: //android.widget.ListView</msg>
+<arg>${task_page.frm_list}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.245890" elapsed="1.733973"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Is Element Visible" owner="common">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:07.245289" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"13 January 2026")]</msg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2026-01-13T13:38:06.983427" elapsed="0.261862"/>
+</kw>
+<msg time="2026-01-13T13:38:07.246289" level="INFO">${element_vis} = True</msg>
+<var>${element_vis}</var>
+<arg>AppiumLibrary.Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-01-13T13:38:06.982815" elapsed="0.263474"/>
+</kw>
+<return>
+<value>${element_vis}</value>
+<status status="PASS" start="2026-01-13T13:38:07.246289" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:38:07.246289" level="INFO">${date_visible} = True</msg>
+<var>${date_visible}</var>
+<arg>${date_loc}</arg>
+<doc>Checks whether an element becomes visible within the specified timeout.</doc>
+<status status="PASS" start="2026-01-13T13:38:06.981691" elapsed="0.265598"/>
+</kw>
+<if>
+<branch type="IF" condition="${date_visible}">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:07.250306" level="INFO">Clicking element 'xpath=//android.view.View[contains(@content-desc,"13 January 2026")]'.</msg>
+<msg time="2026-01-13T13:38:08.594424" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"13 January 2026")]</msg>
+<arg>${date_loc}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:07.247289" elapsed="1.347613"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:08.601146" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="com.avjindersinghsekhon.minimaltodo:id/ok"]'.</msg>
+<msg time="2026-01-13T13:38:08.800107" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.avjindersinghsekhon.minimaltodo:id/ok"]</msg>
+<arg>${task_page.btn_apply_remind_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:08.595405" elapsed="0.205301"/>
+</kw>
+<break>
+<status status="PASS" start="2026-01-13T13:38:08.800706" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2026-01-13T13:38:07.247289" elapsed="1.553417"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:38:07.247289" elapsed="1.553417"/>
+</if>
+<kw name="Swipe Down To Top" owner="common">
+<arg>${task_page.frm_list}</arg>
+<doc>Performs a swipe gesture from the lower part of the element to the upper part.</doc>
+<status status="NOT RUN" start="2026-01-13T13:38:08.801734" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-01-13T13:38:06.980874" elapsed="1.820860"/>
+</iter>
+<var>${i}</var>
+<value>20</value>
+<status status="PASS" start="2026-01-13T13:38:06.980366" elapsed="1.821368"/>
+</for>
+<arg>${remind_date}</arg>
+<doc>Scrolls through the calendar date list and selects the specified date.</doc>
+<status status="PASS" start="2026-01-13T13:38:05.240370" elapsed="3.561364"/>
+</kw>
+<if>
+<branch type="IF" condition="'${remind_time}'">
+<kw name="Clear Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:38:08.802939" elapsed="0.000501"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>${task_page.btn_set_remind_time}</arg>
+<arg>${remind_time}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:38:08.803440" elapsed="0.000470"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:38:08.802733" elapsed="0.001177"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:38:08.802733" elapsed="0.001177"/>
+</if>
+<status status="PASS" start="2026-01-13T13:38:03.545243" elapsed="5.258667"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:38:03.545243" elapsed="5.258667"/>
+</if>
+<if>
+<branch type="IF" condition="${apply}">
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2026-01-13T13:38:08.804410" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:38:08.804410" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:38:08.804410" elapsed="0.000000"/>
+</if>
+<arg>${taskname}</arg>
+<arg>remind_date=${date}</arg>
+<doc>Fills in the task form with the provided task name. Optionally sets reminder date and time.
+Submits the task if apply flag is set to True.</doc>
+<status status="PASS" start="2026-01-13T13:38:02.457353" elapsed="6.347057"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${label['enteredInPast']}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2026-01-13T13:38:08.805429" elapsed="1.309522"/>
+</kw>
+<kw name="Apply Task" owner="task_page">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-01-13T13:38:10.119455" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]'.</msg>
+<msg time="2026-01-13T13:38:10.236287" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton"]</msg>
+<arg>${task_page.btn_apply}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.116954" elapsed="0.119333"/>
+</kw>
+<doc>Submits the task by clicking the Apply button.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.115975" elapsed="0.120312"/>
+</kw>
+<kw name="Verify Task Name Visible" owner="home_page">
+<kw name="Format Task Name" owner="home_page">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-01-13T13:38:10.239757" level="INFO">${first_letter} = T</msg>
+<var>${first_letter}</var>
+<arg>${taskname[0]}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.239757" elapsed="0.001375"/>
+</kw>
+<kw name="Format String" owner="String">
+<msg time="2026-01-13T13:38:10.242131" level="INFO">${taskname} = Task_1</msg>
+<var>${taskname}</var>
+<arg>${first_letter}${taskname[1:]}</arg>
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.241132" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${taskname}</value>
+<status status="PASS" start="2026-01-13T13:38:10.243132" elapsed="0.000000"/>
+</return>
+<msg time="2026-01-13T13:38:10.243132" level="INFO">${expected_taskname} = Task_1</msg>
+<var>${expected_taskname}</var>
+<arg>${taskname}</arg>
+<doc>Formats a task name by capitalizing the first letter.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.238759" elapsed="0.005399"/>
+</kw>
+<if>
+<branch type="IF" condition="${visible}">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="NOT RUN" start="2026-01-13T13:38:10.244158" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-13T13:38:10.244158" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${expected_taskname}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.244158" elapsed="0.968895"/>
+</kw>
+<status status="PASS" start="2026-01-13T13:38:10.244158" elapsed="0.968895"/>
+</branch>
+<status status="PASS" start="2026-01-13T13:38:10.244158" elapsed="0.968895"/>
+</if>
+<arg>${taskname}</arg>
+<arg>visible=${False}</arg>
+<doc>Verifies whether a task name is visible or not visible on the page.</doc>
+<status status="PASS" start="2026-01-13T13:38:10.237969" elapsed="0.976138"/>
+</kw>
+<kw name="Close Application" owner="setup" type="TEARDOWN">
+<kw name="Remove Application" owner="AppiumLibrary">
+<arg>${APP_PACKAGE}</arg>
+<doc>Removes the application that is identified with an application id</doc>
+<status status="PASS" start="2026-01-13T13:38:11.219476" elapsed="6.342405"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2026-01-13T13:38:17.562386" elapsed="0.807163"/>
+</kw>
+<doc>Closes the Android application and removes it from the device.</doc>
+<status status="PASS" start="2026-01-13T13:38:11.218258" elapsed="7.151558"/>
+</kw>
+<doc>Verifies that a user cannot create a task with a reminder date in the past.</doc>
+<status status="PASS" start="2026-01-13T13:37:50.208601" elapsed="28.164924"/>
+</test>
+<status status="PASS" start="2026-01-13T13:37:08.191445" elapsed="70.184081"/>
+</suite>
+<status status="PASS" start="2026-01-13T13:36:53.460190" elapsed="84.918168"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Home">Tests.Home</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Task">Tests.Task</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -6,17 +6,19 @@ Test Teardown        setup.Close Application
 
 *** Test Cases ***
 Verify add new task
-    [Documentation]
+    [Documentation]    Verifies that a user can add a new task with a reminder date successfully.
     ${taskname}    Set Variable    task_1
-    ${date}        Set Variable    01 January 2026
+    ${remind_date}    common.Get Date    offset_day=${1}
+    Log    ${remind_date}
     home_page.Click Add Task
     task_page.Verify New Task Page Visible
-    task_page.Fill Task Form    ${taskname}    remind_date=${date}
+    task_page.Fill Task Form    ${taskname}    remind_date=${remind_date}
     task_page.Verify Remind Information Result
     task_page.Apply Task
     home_page.Verify Task Name Visible    ${taskname}
 
 Verify user able to edit task
+    [Documentation]    Verifies that a user can edit an existing task name successfully.
     ${first_name}     Set Variable    first_name
     ${second_name}    Set Variable    second_name
     home_page.Click Add Task
@@ -28,8 +30,12 @@ Verify user able to edit task
     home_page.Verify Task Name Visible    ${second_name}
 
 Verify user not able to set past time
+    [Documentation]    Verifies that a user cannot create a task with a reminder date in the past.
     ${taskname}    Set Variable    task_1
-    ${date}        Set Variable    01 January 2026
+    ${date}        common.Get Date
     home_page.Click Add Task
     task_page.Verify New Task Page Visible
     task_page.Fill Task Form    ${taskname}    remind_date=${date}
+    Wait Until Page Contains    ${label['enteredInPast']}
+    task_page.Apply Task
+    home_page.Verify Task Name Visible    ${taskname}    visible=${False}
